@@ -11,7 +11,7 @@ public class JogoDaVelha {
     inicializarTabuleiro();
 
     boolean jogoEmAndamento = true;
-    while (jogoEmAndamento) {
+    while (jogoEmAndamento) { // Loop principal do jogo 
       exibirTabuleiro();
       realizarJogada(scanner);
 
@@ -37,7 +37,7 @@ public class JogoDaVelha {
     }
   }
 
-  private static void inicializarTabuleiro() {
+  private static void inicializarTabuleiro() { // iniciar o tabuleiro com espaços
     for (int i = 0; i < SIZE; i++) {
       for (int j = 0; j < SIZE; j++) {
         tabuleiro[i][j] = '-';
@@ -45,7 +45,7 @@ public class JogoDaVelha {
     }
   }
 
-  private static void exibirTabuleiro() {
+  private static void exibirTabuleiro() { // renderizar o tabuleiro para o jogador
     for (int i = 0; i < SIZE; i++) {
       for (int j = 0; j < SIZE; j++) {
         System.out.print(tabuleiro[i][j] + " ");
@@ -54,7 +54,7 @@ public class JogoDaVelha {
     }
   }
 
-  private static void realizarJogada(Scanner scanner) {
+  private static void realizarJogada(Scanner scanner) { // realizar a jogada do jogador
     boolean jogadaValida = false;
     while (!jogadaValida) {
       System.out.println("Jogador " + jogadorAtual + ", insira a linha e a coluna (1-3): "); // 1-3 ao invés de 0-2 para deixar mais intuitivo para o usuário geral
@@ -74,7 +74,7 @@ public class JogoDaVelha {
     }
   }
 
-  private static void trocarJogador() {
+  private static void trocarJogador() { // trocar o jogador atual 
     jogadorAtual = (jogadorAtual == 'X') ? 'O' : 'X';
   }
 
